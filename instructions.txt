@@ -1,0 +1,12 @@
+Nom de la branche : etape1
+
+Deadline = mercredi 15 mars à 8h00
+
+Objectif : 
+
+Le but est d'avoir la calculatrice de base, c'est à dire le html / css, 
+et le js qui permet de faire le travail de base (taper les chiffres, opération etc. et avoir le résultat). 
+
+Ce qui a été présenté et est dans les slides en parties 1 et 2. 
+jusqu’à la slide 26 'Vous avez votre première calculatrice !'
+Pas de serveur pour le moment ni donc de communication avec.
