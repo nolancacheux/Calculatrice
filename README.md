@@ -19,14 +19,17 @@ Ce projet est une calculatrice simple réalisée en JavaScript, HTML et CSS. Il 
 - Ouvrez ensuite le fichier index.html dans votre navigateur.
 
 ## Fonctionnalités
-- Partie 3: Création de la classe Calculator
+
+### Partie 3: Création de la classe Calculator
+
  - La calculatrice est construite à l'aide d'une classe JavaScript Calculator. Cette classe contient les méthodes pour effectuer les opérations de base suivantes :
   - addToInput(charClicked): Ajoute un caractère à l'input.
   - clearInput(): Efface le contenu de l'input.
   - computeResult(): Calcule le résultat de l'opération en cours et l'affiche.
   - La classe Calculator gère également l'historique des calculs effectués.
 
-- Partie 4: Fonction de retour en arrière
+Partie 4: Fonction de retour en arrière
+
  - La fonction de retour en arrière permet de supprimer le dernier caractère entré ou de revenir à l'opération précédente. Cette fonctionnalité est implémentée dans la méthode undo() de la classe Calculator.
 
  - La méthode undo() fonctionne de la manière suivante :
