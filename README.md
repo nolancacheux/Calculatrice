@@ -3,8 +3,8 @@
 Ce projet est une calculatrice simple réalisée en JavaScript, HTML et CSS. Il comprend une interface utilisateur avec des boutons pour effectuer des opérations arithmétiques de base, ainsi qu'une fonctionnalité de retour en arrière pour supprimer le dernier caractère entré ou revenir à l'opération précédente.
 
 ## Table des matières
-- 1) Installation
-- 2) Fonctionnalités
+- Installation
+- Fonctionnalités
  - Partie 3: Création de la classe Calculator
  - Partie 4: Fonction de retour en arrière
 
@@ -28,7 +28,7 @@ Ce projet est une calculatrice simple réalisée en JavaScript, HTML et CSS. Il 
   - computeResult(): Calcule le résultat de l'opération en cours et l'affiche.
   - La classe Calculator gère également l'historique des calculs effectués.
 
-Partie 4: Fonction de retour en arrière
+### Partie 4: Fonction de retour en arrière
 
  - La fonction de retour en arrière permet de supprimer le dernier caractère entré ou de revenir à l'opération précédente. Cette fonctionnalité est implémentée dans la méthode undo() de la classe Calculator.
 
