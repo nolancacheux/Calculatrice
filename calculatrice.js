@@ -1,68 +1,55 @@
+// Définition de la classe Calculator
+class Calculator {
+    // Constructeur de la classe
+    constructor() {
+        // Récupération des éléments HTML pour l'affichage de l'input et du résultat
+        this.input = document.getElementById("input");
+        this.result = document.getElementById("result");
+        // Initialisation de l'historique des calculs et de la dernière opération
+        this.history = [];
+    }
 
-// On récupère toutes les touches de la calculatrice (éléments HTML)
-const buttons = Array.from(document.querySelectorAll(".button"));
-// On crée un tableau qui contient les valeurs des touches (attribut data-key)
-const keyValues = buttons.map((button) => button.dataset.key);
-// On récupère l'écran de la calculatrice (élément HTML)
-const screen = document.querySelector(".screen");
+    // Méthode pour ajouter un caractère à l'input
+    addToInput(charClicked) {
+        // Ajout du caractère à l'input
+        this.input.value += charClicked;
+    }
 
-// On écoute les événements de type "keydown" sur tout le document
-document.addEventListener("keydown", (event) => {
-// On récupère la valeur de la touche pressée (keyCode) sous forme de chaîne de caractères
-const value = event.keyCode.toString();
-// On appelle la fonction "calculate" avec la valeur de la touche pressée
-calculate(value);
-});
+    // Méthode pour effacer l'input
+    clearInput() {
+        this.input.value = "";
+    }
 
-// On ajoute un écouteur d'événements "click" sur chaque touche de la calculatrice
-buttons.forEach((button) => {
-button.addEventListener("click", (event) => {
-// On récupère la valeur de la touche cliquée (attribut data-key)
-const value = event.target.dataset.key;
-// On appelle la fonction "calculate" avec la valeur de la touche cliquée
-calculate(value);
-});
-});
+    // Méthode pour calculer le résultat de l'opération en cours
+    computeResult() {
+        try {
+            // Calcul du résultat en utilisant eval()
+            var result = eval(this.input.value);
+            // Affichage du résultat
+            this.result.value = this.input.value + " = " + result;
+            // Ajout de l'opération et du résultat à l'historique
+            this.history.push({ operation: this.input.value, result: result });
+        } catch {
+            // Affichage d'une erreur si le calcul n'est pas valide
+            this.result.value = 'Error';
+        }
+        // Effacement de l'input
+        this.clearInput();
+    }
 
-// Fonction qui effectue le calcul en fonction de la valeur de la touche pressée ou cliquée
-const calculate = (value) => {
-// Si la valeur de la touche est présente dans le tableau "keyValues"
-if (keyValues.includes(value)) {
-switch (value) {
-// Si la touche correspond au bouton "C" (effacer)
-case "8":
-// On efface l'écran en mettant son contenu à une chaîne de caractères vide
-screen.textContent = "";
-break;
-// Si la touche correspond au bouton "=" (égal)
-case "13":
-// On évalue le contenu de l'écran (en utilisant la fonction "eval")
-const calculation = eval(screen.textContent);
-// On affiche le résultat dans l'écran
-screen.textContent = calculation;
-break;
-case "46":
-// On récupère le contenu de l'écran
-let text = screen.textContent;
-// On supprime le dernier caractère
-text = text.slice(0, -1);
-// On affiche le nouveau contenu de l'écran
-screen.textContent = text;
-break;
-// Si la touche correspond à une touche de chiffre ou d'opération
-default:
-// On récupère l'indice de la touche dans le tableau "keyValues"
-const index = keyValues.indexOf(value);
-// On récupère l'élément HTML correspondant à la touche
-const button = buttons[index];
-// On ajoute le contenu de la touche à l'écran
-screen.textContent += button.innerHTML;
+    // Méthode pour revenir en arrière et afficher la dernière opération effectuée
+undo() {
+    // Si l'input contient des caractères, supprimer le dernier caractère
+    if (this.input.value.length > 0) {
+        this.input.value = this.input.value.slice(0, -1);
+    } else if (this.history.length > 0) {
+        // Sinon, si l'historique contient des éléments, afficher la dernière opération de l'historique
+        const lastEntry = this.history.pop();
+        this.input.value = lastEntry.operation;
+    }
 }
-}
-};
 
-// On écoute les erreurs dans le script
-window.addEventListener("error", (event) => {
-// On affiche un message d'erreur avec le message d'erreur associé à l'événement
-alert("Une erreur est survenue dans votre calcul : " + event.error.message);
-});
+}
+
+// Création d'une nouvelle instance de la classe Calculator
+let calculator = new Calculator();
