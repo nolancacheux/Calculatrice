@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="calculatrice.css">
+    <title>Calculatrice Nolan </title>
+</head>
+
+<body>
+   <h2>Calculatrice</h2>
+   <div class="calculatrice">
+
+      <div class="affichage">
+         <p id="output_solve">0</p>
+         <p id="output">0</p>
+      </div>
+
+      <div class="first-row">
+         <button id="l1-1" onclick="baseCalculator.clique('7')">7</button>
+         <button id="l1-2" onclick="baseCalculator.clique('8')">8</button>
+         <button id="l1-3" onclick="baseCalculator.clique('9')">9</button>
+         <button id="l1-4" onclick="baseCalculator.clique('/')">/</button>
+         <button id="l1-5" onclick="baseCalculator.retour()">R</button>
+         <button id="l1-6" onclick="baseCalculator.efface()">C</button>
+      </div>
+  
+      <div class="second-row">
+         <button id="l2-1" onclick="baseCalculator.clique('4')">4</button>
+         <button id="l2-2" onclick="baseCalculator.clique('5')">5</button>
+         <button id="l2-3" onclick="baseCalculator.clique('6')">6</button>
+         <button id="l2-4" onclick="baseCalculator.clique('*')">X</button>
+         <button id="l2-5" onclick="baseCalculator.clique('l')">&lpar;</button>
+         <button id="l2-6" onclick="baseCalculator.clique('r')">&rpar;</button>
+      </div>
+  
+      <div class="third-row">
+         <button id="l3-1" onclick="baseCalculator.clique('1')">1</button>
+         <button id="l3-2" onclick="baseCalculator.clique('2')">2</button>
+         <button id="l3-3" onclick="baseCalculator.clique('3')">3</button>
+         <button id="l3-4" onclick="baseCalculator.clique('-')">-</button>
+      </div>
+  
+      <div class="fourth-row">
+         <button id="l4-1" onclick="baseCalculator.clique('0')">0</button>
+         <button id="l4-2" onclick="baseCalculator.clique('.')">,</button>
+         <button id="l4-3" onclick="baseCalculator.clique('+')">+</button>
+         <button id="l4-4" onclick="baseCalculator.calcul()">=</button>
+      </div>
+   </div>
+
+   <script type="text/javascript" src="calculatrice.js"></script>
+</body>
+
+</html>
